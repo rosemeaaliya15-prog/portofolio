@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ARose</title>
+<title>ARose ❤️</title>
 
 <style>
 
@@ -16,46 +15,141 @@
 
 body{
     background:#000;
-    color:white;
-    font-family:'Georgia',serif;
     min-height:100vh;
+    overflow:hidden;
+    font-family:Georgia, serif;
     display:flex;
     justify-content:center;
     align-items:center;
 }
 
-.main-container{
-    width:90%;
-    max-width:900px;
-    border:3px solid #FFD700;
-    padding:40px;
-    border-radius:25px;
-    text-align:center;
+/* Floating Hearts */
+
+.hearts{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    overflow:hidden;
+}
+
+.hearts span{
+    position:absolute;
+    bottom:-150px;
+    width:60px;
+    height:60px;
+    background:red;
+    transform:rotate(45deg);
+    animation:floatHeart linear infinite;
     box-shadow:
-    0 0 15px #FFD700,
-    0 0 30px #FFD70033;
+    0 0 20px red,
+    0 0 40px crimson,
+    0 0 60px red;
+}
+
+.hearts span:before,
+.hearts span:after{
+    content:"";
+    position:absolute;
+    width:60px;
+    height:60px;
+    background:red;
+    border-radius:50%;
+}
+
+.hearts span:before{
+    top:-30px;
+    left:0;
+}
+
+.hearts span:after{
+    left:-30px;
+    top:0;
+}
+
+@keyframes floatHeart{
+
+    0%{
+        transform:translateY(0) translateX(0) rotate(45deg);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    50%{
+        transform:
+        translateY(-500px)
+        translateX(100px)
+        rotate(180deg);
+    }
+
+    100%{
+        transform:
+        translateY(-1200px)
+        translateX(-100px)
+        rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* Heart Positions */
+
+.hearts span:nth-child(1){left:5%;animation-duration:12s;}
+.hearts span:nth-child(2){left:15%;animation-duration:18s;width:90px;height:90px;}
+.hearts span:nth-child(3){left:25%;animation-duration:14s;}
+.hearts span:nth-child(4){left:35%;animation-duration:20s;width:100px;height:100px;}
+.hearts span:nth-child(5){left:45%;animation-duration:15s;}
+.hearts span:nth-child(6){left:55%;animation-duration:17s;width:80px;height:80px;}
+.hearts span:nth-child(7){left:65%;animation-duration:13s;}
+.hearts span:nth-child(8){left:75%;animation-duration:19s;width:90px;height:90px;}
+.hearts span:nth-child(9){left:85%;animation-duration:16s;}
+.hearts span:nth-child(10){left:95%;animation-duration:21s;width:110px;height:110px;}
+
+/* Main Card */
+
+.card{
+    width:90%;
+    max-width:850px;
+    border:3px solid gold;
+    border-radius:30px;
+    padding:40px;
+    text-align:center;
+    background:rgba(0,0,0,0.7);
+    backdrop-filter:blur(10px);
+    z-index:10;
+
+    box-shadow:
+    0 0 20px gold,
+    0 0 40px rgba(255,215,0,0.4);
 }
 
 .title{
-    font-size:4rem;
-    color:#FFD700;
-    letter-spacing:8px;
-    margin-bottom:40px;
+    color:gold;
+    font-size:70px;
+    letter-spacing:10px;
+    margin-bottom:30px;
+
     text-shadow:
-    0 0 10px #FFD700,
-    0 0 20px #FFD700;
+    0 0 10px gold,
+    0 0 30px gold;
 }
 
 .photo-frame{
     width:320px;
     height:320px;
     margin:auto;
-    border:6px solid #FFD700;
-    border-radius:20px;
+    border:6px solid gold;
+    border-radius:25px;
     overflow:hidden;
+
     box-shadow:
-    0 0 20px #FFD700,
-    0 0 40px #FFD70055;
+    0 0 20px gold,
+    0 0 40px gold;
+
+    animation:pulse 2s infinite;
 }
 
 .photo-frame img{
@@ -64,27 +158,69 @@ body{
     object-fit:cover;
 }
 
-.subtitle{
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.05);}
+    100%{transform:scale(1);}
+}
+
+.text{
+    color:white;
     margin-top:30px;
-    font-size:1.5rem;
-    color:#f5d76e;
-    letter-spacing:2px;
+    font-size:28px;
+    line-height:1.8;
+}
+
+.love{
+    color:#ff4d6d;
+    font-size:38px;
+    margin-top:25px;
+    animation:blink 1.5s infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:.5;
+    }
 }
 
 </style>
 </head>
+
 <body>
 
-<div class="main-container">
+<div class="hearts">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
 
-    <h1 class="title">ARose</h1>
+<div class="card">
+
+    <div class="title">
+        ARose
+    </div>
 
     <div class="photo-frame">
         <img src="photo.jpg" alt="ARose">
     </div>
 
-    <div class="subtitle">
-        The Most Beautiful Part Of My Life ❤️
+    <div class="text">
+        Every moment with you feels like a beautiful dream.<br>
+        Your smile brightens my darkest days.<br>
+        You are the reason behind my happiness.<br>
+        My heart beats only for you. ❤️
+    </div>
+
+    <div class="love">
+        I Love You Forever ❤️
     </div>
 
 </div>
